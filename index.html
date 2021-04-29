@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>فرم کارمندان</title>
 </head>
-<body onload="fetchDataWithAxios()"> 
+<body> 
         <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12 col-md-3 col-lg-3 menu">
@@ -26,14 +26,13 @@
                                         <i class=" zmdi zmdi-edit"></i>  ویرایش و حدف</a></li>
                                     <li> <a href="#create" data-toggle="tab" class="nav-link">
                                         <i class="  zmdi zmdi-account-add"></i> ایجاد</a></li>
-                                    <!-- <li><a href="#delete" data-toggle="tab" class="nav-link">
-                                        <i class="  zmdi zmdi-delete"></i>حذف</a></li>    -->
                                     <li><a href="#" class="nav-link"><i class=" zmdi zmdi-sign-in">
                                     </i> خروج</a></li>
 
                                 </ul>
                             </div>
                             </div>
+
                             <div class="col-sm-12 col-md-9 col-lg-9 formcontent">
                                 <div class="tab-content dashboard_content">
                                     <div class="tab-pane fade show active" id="view">
@@ -51,30 +50,7 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody id="records_table">
-                                                           <tr>
-                                                               <td>1</td>
-                                                               <td>ali</td>
-                                                               <td>2000$</td>
-                                                               <td>25</td>
-                                                           </tr>
-                                                           <tr>
-                                                            <td>2</td>
-                                                            <td>reza</td>
-                                                            <td>3000$</td>
-                                                            <td>25</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>3</td>
-                                                            <td>hosein</td>
-                                                            <td>4000$</td>
-                                                            <td>25</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>4</td>
-                                                            <td>mehdi</td>
-                                                            <td>5000$</td>
-                                                            <td>25</td>
-                                                        </tr>
+                                                          
             
                                                         </tbody>
                                                                        
@@ -85,7 +61,7 @@
                                
                                     </div>
                                     <div class="tab-pane fade" id="editANDdelete">
-                                        <h3>ویرایش </h3>
+                                        <h3> و حذف ویرایش </h3>
                                       
                                         <table class="table table-hover  table-condensed table-responsive-sm" >
                                             <thead>
@@ -101,46 +77,13 @@
                                                     <!-- <th>profile_image</th> -->
                                                 </tr>
                                             </thead>
-                                            <tbody id="records_table">
+                                            <tbody id="records_table2">
                                                <tr>
                                                    <td>
                                                     <a href=""><i class=" zmdi zmdi-edit"></i></a>
                                                     <a href="" class="deletelink"><i class="  zmdi zmdi-delete"></i></a>
                                                    </td>
-                                                   <td>1</td>
-                                                   <td>ali</td>
-                                                   <td>2000$</td>
-                                                   <td>25</td>
-                                               </tr>
-                                               <tr>
-                                                   <td> <a href=""><i class=" zmdi zmdi-edit"></i></a>
-                                                    <a href="" class="deletelink"><i class="  zmdi zmdi-delete"></i></a>
-                                                   </td>
-                                                <td>2</td>
-                                                <td>reza</td>
-                                                <td>3000$</td>
-                                                <td>25</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <a href=""><i class=" zmdi zmdi-edit"></i></a>
-                                                    <a href="" class="deletelink"><i class="  zmdi zmdi-delete"></i></a>
-                                                </td>
-                                                <td>3</td>
-                                                <td>hosein</td>
-                                                <td>4000$</td>
-                                                <td>25</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <a href=""><i class=" zmdi zmdi-edit"></i></a>
-                                                    <a href="" class="deletelink"><i class="  zmdi zmdi-delete"></i></a>
-                                                </td>
-                                                <td>4</td>
-                                                <td>mehdi</td>
-                                                <td>5000$</td>
-                                                <td>25</td>
-                                            </tr>
+                                                 
 
                                             </tbody>                                        
                                         </table>
@@ -150,22 +93,25 @@
                                     </div>
                                     <div class="tab-pane fade" id="create">
                                         <h3>ایجاد </h3>
-                                        <form action="">
+                                        <form action="http://dummy.restapiexample.com/api/v1/create"
+                                            method="POST"
+                                            id="createForm"
+                                        >
                                            <div class="row">
                                              <div class="col-lg-6">
                                                 <div class="form-group ">
                                                     <label class="form-control-label" for="input-name">نام</label>
-                                                    <input type="text" class="form-control "
+                                                    <input name="name" type="text" class="form-control "
                                                         id="input-name" placeholder="نام را وارد کنید">
                                                 </div>
                                              </div>
                                         
                                         
-                                             <div class="col-lg-6">
+                                            <div class="col-lg-6">
                                                 <div class="form-group ">
                                                     <label class="form-control-label" for="input-age">سن
                                                     </label>
-                                                    <input type="text" class="form-control "
+                                                    <input name="age" type="text" class="form-control "
                                                         id="input-age" placeholder="سن را وارد کنید">
                                                 </div>
                                              </div>
@@ -174,25 +120,26 @@
                                                 <div class="col-lg-6">
                                                    <div class="form-group ">
                                                        <label class="form-control-label" for="input-name">میزان حقوق</label>
-                                                       <input type="text" class="form-control "
+                                                       <input type="text" name="salary" class="form-control "
                                                            id="input-name" placeholder="میزان حقوق را وارد کنید">
                                                    </div>
                                                 </div>
                                            
                                            
-                                                <div class="col-lg-6">
+                                                <!-- <div class="col-lg-6">
                                                    <div class="form-group ">
                                                        <label class="form-control-label" for="input-age">عکس
                                                        </label>
                                                        <input type="file" class="form-control"
                                                            id="input-age" placeholder="" formmethod="POST">
                                                    </div>
-                                               </div>   
+                                               </div>    -->
+                                            </div>
+                                            <div class="save_button primary_btn default_button">
+                                                <button type="submit">ذخیره</button>
                                             </div>
                                         </form>
-                                        <div class="save_button primary_btn default_button">
-                                            <button type="submit">ذخیره</button>
-                                        </div>
+                                       
                                 </div>
                             </div>
                         </div>
@@ -200,39 +147,33 @@
    
        <!-- Plugins JS -->
        <script src="assets/js/plugins.js"></script>
-
-       <!-- Main JS -->
-       <!-- <script src="assets/js/main.js"></script>
        <script src="assets/js/jquery.3.5.1.js"></script>
-       <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+       <script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
        <script>
-           
-// function fillTable(data) {
-//   const tbody = document.querySelector('tbody');
-//   tbody.innerHTML = data.map((item) => {
-//       return `<tr>
-//         <td>${item.id}</td>
-//         <td>${item.employee_name}</td>
-//         <td>${item.employee_salary}</td>
-//         <td>${item.employee_age}</td>
-//         <td>${item.profile_image}</td>
-//       </tr>`;
-//     });
-    
-// };
 
-// function fetchDataWithAxios() {
-//   axios
-//     .get('http://dummy.restapiexample.com/api/v1/employees')
-//     .then((res) => {
-//       fillTable(res.data);
-//       console.log(res.data);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// }
-    
-</script>
+    //    show employees;
+        axios.get(`http://dummy.restapiexample.com/api/v1/employees`)
+        .then(function(result){
+            console.log("result",result.data.data)
+            const data = result.data.data;
+
+            data.forEach(function(employee,key){
+                $("#records_table").append(`<tr>
+                    
+                    <td>${employee.id}</td>
+                    <td>${employee.employee_name}</td>
+                    <td>${employee.employee_age}</td>
+                    <td>${employee.employee_salary}</td>
+                    
+                    </tr>`);
+            });
+
+        });
+        .catch(function(error){
+            console.log("error",error);
+        });
+        
+
+      </script>
 </body>
 </html>
