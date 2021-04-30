@@ -14,166 +14,261 @@
     <title>فرم کارمندان</title>
 </head>
 <body> 
-        <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-3 col-lg-3 menu">
-                            <!-- Nav tabs -->
-                            <div class="dashboard_tab_button">
-                                <ul role="tablist" class="nav flex-column dashboard-list">
-                                    <li><a href="#view" data-toggle="tab" class="nav-link active">
-                                        <i class="zmdi zmdi-accounts"></i>نمایش  کارمندان</a></li>
-                                    <li><a href="#editANDdelete" data-toggle="tab" class="nav-link">
-                                        <i class=" zmdi zmdi-edit"></i>  ویرایش و حدف</a></li>
-                                    <li> <a href="#create" data-toggle="tab" class="nav-link">
-                                        <i class="  zmdi zmdi-account-add"></i> ایجاد</a></li>
-                                    <li><a href="#" class="nav-link"><i class=" zmdi zmdi-sign-in">
-                                    </i> خروج</a></li>
+    <div class="container">
+        <div class="col-sm-12 col-md-2 col-lg-2 menu">
+            <!-- Nav tabs -->
+            <div class="dashboard_tab_button">
+                <ul role="tablist" class="nav flex-column dashboard-list">
+                    <li><a href="#view" data-toggle="tab" class="nav-link active">
+                        <i class="zmdi zmdi-accounts"></i>نمایش  کارمندان</a></li>
+                    <li> <a href="#create" data-toggle="tab" class="nav-link">
+                        <i class="  zmdi zmdi-account-add"></i> ایجاد کارمند جدید</a></li>
 
-                                </ul>
+                </ul>
+            </div>
+            </div>
+
+            <div class="col-sm-12 col-md-10 col-lg-10 formcontent">
+                <div class="tab-content dashboard_content">
+                    <div class="tab-pane fade show active" id="view">
+                        <h3>نمایش لیست کارمندان </h3>
+                         <div class="row" style="margin-right: 0; margin-left: 0;">
+                                    <table class="table table-hover  table-condensed table-responsive-sm" >
+                                        <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>نام</th>
+                                                <th>میزان حقوق</th>
+                                                <th>سن</th>
+                                                <th> ویرایش </th>
+                                                <th>حذف</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="records_table">
+                                          
+
+                                        </tbody>
+                                                                              
+                                    </table>
                             </div>
+               
+                    </div>
+                    <div class="tab-pane fade" id="create">
+                        <h3>ایجاد کارمند جدید</h3>
+                        <form action="http://dummy.restapiexample.com/api/v1/create"
+                            method="POST"
+                            id="createForm"
+                        >
+                           <div class="row">
+                             <div class="col-lg-6">
+                                <div class="form-group ">
+                                    <label class="form-control-label" for="input-name">نام</label>
+                                    <input name="name" type="text" class="form-control "
+                                        id="input-name" placeholder="نام را وارد کنید">
+                                </div>
+                             </div>
+                        
+                        
+                            <div class="col-lg-6">
+                                <div class="form-group ">
+                                    <label class="form-control-label" for="input-age">سن
+                                    </label>
+                                    <input name="age" type="text" class="form-control "
+                                        id="input-age" placeholder="سن را وارد کنید">
+                                </div>
+                             </div>
                             </div>
-
-                            <div class="col-sm-12 col-md-9 col-lg-9 formcontent">
-                                <div class="tab-content dashboard_content">
-                                    <div class="tab-pane fade show active" id="view">
-                                        <h3>نمایش لیست کارمندان </h3>
-                                         <div class="row" style="margin-right: 0; margin-left: 0;">
-                                                
-                                                    <table class="table table-hover  table-condensed table-responsive-sm" >
-                                                        <thead>
-                                                            <tr>
-                                                                <th>id</th>
-                                                                <th>نام</th>
-                                                                <th>میزان حقوق</th>
-                                                                <th>سن</th>
-                                                                <!-- <th>profile_image</th> -->
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody id="records_table">
-                                                          
-            
-                                                        </tbody>
-                                                                       
-                                                                                                               
-                                                    </table>
-                                                
-                                            </div>
-                               
-                                    </div>
-                                    <div class="tab-pane fade" id="editANDdelete">
-                                        <h3> و حذف ویرایش </h3>
-                                      
-                                        <table class="table table-hover  table-condensed table-responsive-sm" >
-                                            <thead>
-                                                <tr>
-                                                    <th>
-                                                        <i class=" zmdi zmdi-edit"></i>
-                                                        <i class="zmdi zmdi-delete deletelink"></i>
-                                                    </th>
-                                                    <th>id</th>
-                                                    <th>نام</th>
-                                                    <th>میزان حقوق</th>
-                                                    <th>سن</th>
-                                                    <!-- <th>profile_image</th> -->
-                                                </tr>
-                                            </thead>
-                                            <tbody id="records_table2">
-                                               <tr>
-                                                   <td>
-                                                    <a href=""><i class=" zmdi zmdi-edit"></i></a>
-                                                    <a href="" class="deletelink"><i class="  zmdi zmdi-delete"></i></a>
-                                                   </td>
-                                                 
-
-                                            </tbody>                                        
-                                        </table>
-                                        <div class="save_button primary_btn default_button">
-                                            <button type="submit">ذخیره</button>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="create">
-                                        <h3>ایجاد </h3>
-                                        <form action="http://dummy.restapiexample.com/api/v1/create"
-                                            method="POST"
-                                            id="createForm"
-                                        >
-                                           <div class="row">
-                                             <div class="col-lg-6">
-                                                <div class="form-group ">
-                                                    <label class="form-control-label" for="input-name">نام</label>
-                                                    <input name="name" type="text" class="form-control "
-                                                        id="input-name" placeholder="نام را وارد کنید">
-                                                </div>
-                                             </div>
-                                        
-                                        
-                                            <div class="col-lg-6">
-                                                <div class="form-group ">
-                                                    <label class="form-control-label" for="input-age">سن
-                                                    </label>
-                                                    <input name="age" type="text" class="form-control "
-                                                        id="input-age" placeholder="سن را وارد کنید">
-                                                </div>
-                                             </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                   <div class="form-group ">
-                                                       <label class="form-control-label" for="input-name">میزان حقوق</label>
-                                                       <input type="text" name="salary" class="form-control "
-                                                           id="input-name" placeholder="میزان حقوق را وارد کنید">
-                                                   </div>
-                                                </div>
-                                           
-                                           
-                                                <!-- <div class="col-lg-6">
-                                                   <div class="form-group ">
-                                                       <label class="form-control-label" for="input-age">عکس
-                                                       </label>
-                                                       <input type="file" class="form-control"
-                                                           id="input-age" placeholder="" formmethod="POST">
-                                                   </div>
-                                               </div>    -->
-                                            </div>
-                                            <div class="save_button primary_btn default_button">
-                                                <button type="submit">ذخیره</button>
-                                            </div>
-                                        </form>
-                                       
+                            <div class="row">
+                                <div class="col-lg-6">
+                                   <div class="form-group ">
+                                       <label class="form-control-label" for="input-name">میزان حقوق</label>
+                                       <input type="text" name="salary" class="form-control "
+                                           id="input-name" placeholder="میزان حقوق را وارد کنید">
+                                   </div>
                                 </div>
                             </div>
+                            <div class="save_button primary_btn default_button">
+                                <button type="submit" style="cursor: pointer;">ذخیره</button>
+                            </div>
+                        </form>
+                       
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="myModal">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+          
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">ویرایش کارمند</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+          
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="http://dummy.restapiexample.com/api/v1/create"
+                    method="POST"
+                    id="updateForm"
+                >
+                   <div class="row">
+                     <div class="col-lg-6">
+                        <div class="form-group ">
+                            <label class="form-control-label" for="input-name">نام</label>
+                            <input name="name" type="text" class="form-control "
+                                id="input-name" placeholder="نام را وارد کنید">
                         </div>
-    
-   
+                     </div>
+                
+                
+                    <div class="col-lg-6">
+                        <div class="form-group ">
+                            <label class="form-control-label" for="input-age">سن
+                            </label>
+                            <input name="age" type="text" class="form-control "
+                                id="input-age" placeholder="سن را وارد کنید">
+                        </div>
+                     </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                           <div class="form-group ">
+                               <label class="form-control-label" for="input-name">میزان حقوق</label>
+                               <input type="text" name="salary" class="form-control "
+                                   id="input-name" placeholder="میزان حقوق را وارد کنید">
+                           </div>
+                        </div>
+                    </div>
+                    <div class="save_button primary_btn default_button">
+                        <button type="submit" class="btn btn-default" style="cursor: pointer;">ذخیره</button>
+                    </div>
+                </form>
+                </div>
+          
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+          
+              </div>
+            </div>
+          </div>
+             
+      </div> 
        <!-- Plugins JS -->
        <script src="assets/js/plugins.js"></script>
        <script src="assets/js/jquery.3.5.1.js"></script>
        <script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
        <script>
 
-    //    show employees;
-        axios.get(`http://dummy.restapiexample.com/api/v1/employees`)
-        .then(function(result){
-            console.log("result",result.data.data)
-            const data = result.data.data;
 
-            data.forEach(function(employee,key){
-                $("#records_table").append(`<tr>
-                    
-                    <td>${employee.id}</td>
-                    <td>${employee.employee_name}</td>
-                    <td>${employee.employee_age}</td>
-                    <td>${employee.employee_salary}</td>
-                    
-                    </tr>`);
+        // create new employee;
+        document.getElementById("createForm")
+        .addEventListener("submit",function(event){
+            event.preventDefault();
+            const formObj = document.forms.createForm;
+
+            const formData = new FormData(formObj);
+
+            console.log(
+                formData.get("age")
+            );
+
+            axios.post(formObj.getAttribute("action"),{
+                name:formData.get("name"),
+                age:formData.get("age"),
+                salary:formData.get("salary"),
+            })
+            .then(function(res){
+                const data = res.data.data;
+                console.log("data",data);
+                alert(`کارمند ${data.name} اضافه شد`);
             });
 
         });
+        // ---------------------------------------------------------
+
+        //  show emoloyees;
+        axios.get(`http://dummy.restapiexample.com/api/v1/employees`)
+        .then(function(result){
+            //success
+            console.log("result",result.data.data)
+            const data = result.data.data;
+
+            console.log("data",data);
+
+            data.forEach(function(employee,key){
+                $("#records_table").append(`<tr>
+                    <td>${employee.id}</td>
+                    <td>${employee.employee_name}</td>
+                    <td>${employee.employee_age}</td>
+                    <td>${employee.employee_salary}</td> 
+                    <td>
+                        <button data-toggle="modal" data-target="#myModal"  data-id="${employee.id}" class="btn btn-default edit-employee">ویرایش</button>    
+                    </td>
+                    <td>
+                        <button data-id="${employee.id}" class="btn btn-default remove-employee">حذف</button>    
+                    </td>
+                    </tr>`);
+            })
+
+        })
         .catch(function(error){
             console.log("error",error);
-        });
-        
+        })
+        .finally(function(){
 
+        })
+        // --------------------------------------------------------------
+
+        //delete employees;
+        $("#records_table").on("click",".remove-employee",function(){
+            // alert("Hello");
+            let id = $(this).attr("data-id");
+            $(this).parent().parent().remove();
+            axios.delete('http://dummy.restapiexample.com/api/v1/delete/'+id)
+            alert(` کارمند با شناسه ${id} حذف شد`);
+        })
+
+        // edit employees;
+        $("#records_table").on("click",".edit-employee",function(){
+            let id = $(this).attr("data-id");
+          
+            axios.get('http://dummy.restapiexample.com/api/v1/employee/'+id)
+            .then(res => {
+                const data = res.data.data;
+                console.log("here : ",data);
+                $("#myModal form input[name='name']").val( data.employee_name );
+                $("#myModal form input[name='salary']").val( data.employee_salary );
+                $("#myModal form input[name='age']").val( data.employee_age );
+
+                $("#myModal form").attr("action","http://dummy.restapiexample.com/api/v1/update/"+id)
+            })
+            .catch(function(){
+                alert("server error ....");
+            })
+            
+        })
+
+
+
+        $("#myModal form").submit(function(event){
+            event.preventDefault();
+
+            const url = $(this).attr("action");
+            const data = $(this).serialize();
+
+            axios.put(url,data)
+            .then(res => {
+                alert("تغییرات اعمال شد.");
+            })
+            .catch(function(){
+                alert("server error ...");
+            })
+        })
+        // ---------------------------------------------------
       </script>
+
 </body>
 </html>

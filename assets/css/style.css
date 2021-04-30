@@ -60,7 +60,7 @@ body {
     border: 1px solid #ededed;
 }
 .dashboard_tab_button ul  {
-	height: 328px;
+	height: 293px;
 }
 .dashboard_tab_button ul li {
 	margin-bottom: -38px;
@@ -76,9 +76,9 @@ body {
 }
 
 .dashboard_tab_button ul li i{
-	font-size: 29px;
+	font-size: 24px;
     position: absolute;
-    right: 60px;
+    right: 27px;
 	
 	}
 
